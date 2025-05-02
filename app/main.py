@@ -3,14 +3,11 @@ import os
 from scan import volumes, snapshots
 from utils import get_volume_summary, get_snapshot_summary, get_cost_summary
 
-# Load environment variables from .env file
 load_dotenv()
 grace_period = int(os.getenv('GRACE_PERIOD', 30))
 
 
 def main():
-
-    # Scan EBS volumes and snapshots
     ebs_volumes, total_volume_cost = volumes.scan_ebs_volumes(grace_period)
     ebs_snapshots, total_snapshot_cost = snapshots.scan_ebs_snapshots(
         grace_period)

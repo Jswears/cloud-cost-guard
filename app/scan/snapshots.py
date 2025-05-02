@@ -5,9 +5,6 @@ from decimal import Decimal
 
 
 def scan_ebs_snapshots(grace_period):
-    """
-    Scan all EBS snapshots in the AWS account and return their details.
-    """
     ec2 = boto3.client('ec2')
     snapshots = ec2.describe_snapshots(OwnerIds=['self'])['Snapshots']
 
@@ -17,7 +14,6 @@ def scan_ebs_snapshots(grace_period):
     for snapshot in snapshots:
         age_days = calculate_age_days(snapshot['StartTime'])
 
-        # Filter snapshots that are older than grace_period days
         if age_days < grace_period:
             continue
 
@@ -26,7 +22,6 @@ def scan_ebs_snapshots(grace_period):
         estimated_cost = Decimal(
             str(snapshot.get('VolumeSize', 0))) * base_price
 
-        # Update total cost only for snapshots that pass the filter
         total_cost += estimated_cost
 
         snapshot_info = {
@@ -46,4 +41,4 @@ def scan_ebs_snapshots(grace_period):
 
         ebs_snapshots.append(snapshot_info)
 
-    return ebs_snapshots, float(total_cost)  # Convert back to float for output
+    return ebs_snapshots, float(total_cost)
