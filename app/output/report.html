@@ -1,0 +1,134 @@
+
+    <html>
+    <head>
+        <title>AWS EBS Cleanup Report</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                color: #333;
+                background-color: #fff;
+                padding: 2rem;
+            }
+            h1, h2 {
+                border-bottom: 2px solid #eee;
+                padding-bottom: 4px;
+                margin-top: 2rem;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 1rem 0;
+                font-size: 14px;
+            }
+            th, td {
+                padding: 0.6rem;
+                border: 1px solid #ccc;
+                text-align: left;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            .excluded {
+                background-color: #f9f9f9;
+                color: #777;
+                font-style: italic;
+            }
+            .summary-box {
+                border: 1px solid #ccc;
+                background: #fafafa;
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            .timestamp {
+                font-size: 0.9em;
+                color: #999;
+                margin-bottom: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>AWS EBS Cleanup Report</h1>
+        <div class="timestamp">Generated on: 2025-05-03 06:34 UTC</div>
+
+        
+    <div class="summary-box">
+        <strong>Total Volume Cost:</strong> $0.32<br>
+        <strong>Total Snapshot Cost:</strong> $0.05<br>
+        <strong><u>Total Estimated Cost:</u></strong> <strong>$0.37</strong>
+    </div>
+    
+
+        
+    <h2>Included Volumes</h2>
+    <table>
+        <tr>
+            <th>Volume ID</th>
+            <th>Age (days)</th>
+            <th>Estimated Cost ($)</th>
+            <th>Region</th>
+            <th>Delete?</th>
+        </tr>
+        
+        <tr class="">
+            <td>vol-0fe48fb7c91073b19</td>
+            <td>0</td>
+            <td>$0.08</td>
+            <td>eu-central-1</td>
+            <td>❌ No</td>
+        </tr>
+        
+        <tr class="">
+            <td>vol-0ff3970bae55dbec9</td>
+            <td>0</td>
+            <td>$0.16</td>
+            <td>eu-central-1</td>
+            <td>❌ No</td>
+        </tr>
+        
+    </table>
+    
+        
+    <h2>Excluded Volumes</h2>
+    <table>
+        <tr>
+            <th>Volume ID</th>
+            <th>Age (days)</th>
+            <th>Estimated Cost ($)</th>
+            <th>Region</th>
+            <th>Delete?</th>
+        </tr>
+        
+        <tr class="excluded">
+            <td>vol-061eec3a11dfea756</td>
+            <td>0</td>
+            <td>$0.08</td>
+            <td>eu-central-1</td>
+            <td>❌ No</td>
+        </tr>
+        
+    </table>
+    
+
+        
+    <h2>Included Snapshots</h2>
+    <table>
+        <tr>
+            <th>Snapshot ID</th>
+            <th>Age (days)</th>
+            <th>Estimated Cost ($)</th>
+            <th>Delete?</th>
+        </tr>
+        
+        <tr class="">
+            <td>snap-02e7e4d1d5daa9565</td>
+            <td>0</td>
+            <td>$0.05</td>
+            <td>❌ No</td>
+        </tr>
+        
+    </table>
+    
+        <h2>Excluded Snapshots</h2><p><em>No data available.</em></p>
+    </body>
+    </html>
+    
